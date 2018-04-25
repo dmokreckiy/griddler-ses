@@ -9,7 +9,9 @@ module Griddler
         # a bug on the AWS side doesn't set the content type to application/json type properly,
         # so we have to intercept and do this in order for Griddler's controller to correctly
         # parse the parameters (see https://forums.aws.amazon.com/thread.jspa?messageID=418160)
-        if env['REQUEST_PATH'] == griddler_path
+        req_path = env['REQUEST_PATH']
+        path_info = env['PATH_INFO']
+        if req_path == griddler_path || path_info == griddler_path
           env['CONTENT_TYPE'] = 'application/json; charset=UTF-8'
         end
 
