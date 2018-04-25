@@ -49,7 +49,7 @@ read it from S3 file instead. Flow with S3 has limitations as well: your email c
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/85x14/griddler-ses.
+Bug reports and pull requests are welcome on GitHub.
 
 
 ## License
