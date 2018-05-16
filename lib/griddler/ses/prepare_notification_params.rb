@@ -24,6 +24,10 @@ module Griddler
       end
 
       private
+      
+      def email_json
+        @email_json
+      end
 
       def ensure_valid_notification_type!
         return if notification_type == 'Received'
