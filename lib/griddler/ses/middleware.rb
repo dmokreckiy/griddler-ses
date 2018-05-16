@@ -1,8 +1,6 @@
 module Griddler
   module Ses
     class Middleware
-      include Rails.application.routes.url_helpers
-
       def initialize(app)
         @app = app
       end
@@ -22,7 +20,11 @@ module Griddler
 
       private
       def griddler_path
-        @griddler_path ||= url_for(controller: 'griddler/emails', action: 'create', only_path: true)
+        @griddler_path ||= Rails.application.routes.url_helpers.url_for(
+          controller: 'griddler/emails',
+          action: 'create',
+          only_path: true
+        )
       end
     end
   end
